@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "updatedAt": "2026-10-09T00:00:00.000Z",
+  "source": {
+    "kind": "PROJECT_LOCAL",
+    "repository": null,
+    "url": null,
+    "license": "Project-local rule definitions; no external rule code or data copied."
+  },
+  "patterns": [
+    {
+      "id": "BULLISH_ENGULFING",
+      "label": "Bullish Engulfing",
+      "direction": "LONG",
+      "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+      "rule": {
+        "kind": "ENGULFING",
+        "minBodyAtr": 0.5,
+        "minRangeAtr": 0.5,
+        "engulfPreviousBody": true
+      },
+      "activation": "SHADOW_ONLY",
+      "validationPolicy": {
+        "minimumTrainCases": 30,
+        "minimumHoldoutCases": 20,
+        "minimumShadowCases": 50,
+        "minimumNetExpectancyPct": 0
+      }
+    },
+    {
+      "id": "BEARISH_ENGULFING",
+      "label": "Bearish Engulfing",
+      "direction": "SHORT",
+      "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+      "rule": {
+        "kind": "ENGULFING",
+        "minBodyAtr": 0.5,
+        "minRangeAtr": 0.5,
+        "engulfPreviousBody": true
+      },
+      "activation": "SHADOW_ONLY",
+      "validationPolicy": {
+        "minimumTrainCases": 30,
+        "minimumHoldoutCases": 20,
+        "minimumShadowCases": 50,
+        "minimumNetExpectancyPct": 0
+      }
+    },
+    {
+      "id": "HANGING_MAN",
+      "label": "Hanging Man",
+      "direction": "SHORT",
+      "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+      "rule": {
+        "kind": "WICK_REVERSAL",
+        "bodyShareMax": 0.3,
+        "dominantWickShareMin": 0.6,
+        "closeLocationMin": 0.6,
+        "minRangeAtr": 0.5,
+        "wick": "LOWER"
+      },
+      "activation": "SHADOW_ONLY",
+      "validationPolicy": {
+        "minimumTrainCases": 30,
+        "minimumHoldoutCases": 20,
+        "minimumShadowCases": 50,
+        "minimumNetExpectancyPct": 0
+      }
+    },
+    {
+      "id": "SHOOTING_STAR",
+      "label": "Shooting Star",
+      "direction": "SHORT",
+      "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+      "rule": {
+        "kind": "WICK_REVERSAL",
+        "bodyShareMax": 0.3,
+        "dominantWickShareMin": 0.6,
+        "closeLocationMax": 0.4,
+        "minRangeAtr": 0.5,
+        "wick": "UPPER"
+      },
+      "activation": "SHADOW_ONLY",
+      "validationPolicy": {
+        "minimumTrainCases": 30,
+        "minimumHoldoutCases": 20,
+        "minimumShadowCases": 50,
+        "minimumNetExpectancyPct": 0
+      }
+    },
+    {
+      "id": "DOJI",
+      "label": "Doji",
+      "direction": "NEUTRAL",
+      "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+      "rule": {
+        "kind": "SMALL_BODY",
+        "bodyShareMax": 0.1,
+        "minRangeAtr": 0.5
+      },
+      "activation": "SHADOW_ONLY",
+      "validationPolicy": {
+        "minimumTrainCases": 30,
+        "minimumHoldoutCases": 20,
+        "minimumShadowCases": 50,
+        "minimumNetExpectancyPct": 0
+      }
+    },
+    {
+      "id": "BULLISH_MARUBOZU",
+      "label": "Bullish Marubozu",
+      "direction": "LONG",
+      "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+      "rule": {
+        "kind": "LARGE_BODY",
+        "bodyShareMin": 0.9,
+        "minRangeAtr": 0.5,
+        "candleDirection": "BULLISH"
+      },
+      "activation": "SHADOW_ONLY",
+      "validationPolicy": {
+        "minimumTrainCases": 30,
+        "minimumHoldoutCases": 20,
+        "minimumShadowCases": 50,
+        "minimumNetExpectancyPct": 0
+      }
+    },
+    {
+      "id": "BEARISH_MARUBOZU",
+      "label": "Bearish Marubozu",
+      "direction": "SHORT",
+      "timeframes": ["1m", "5m", "15m", "1h", "4h", "1d"],
+      "rule": {
+        "kind": "LARGE_BODY",
+        "bodyShareMin": 0.9,
+        "minRangeAtr": 0.5,
+        "candleDirection": "BEARISH"
+      },
+      "activation": "SHADOW_ONLY",
+      "validationPolicy": {
+        "minimumTrainCases": 30,
+        "minimumHoldoutCases": 20,
+        "minimumShadowCases": 50,
+        "minimumNetExpectancyPct": 0
+      }
+    }
+  ]
+}
