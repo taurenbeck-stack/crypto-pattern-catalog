@@ -1,11 +1,12 @@
+
 {
   "schemaVersion": 1,
   "version": "1.0.0",
   "updatedAt": "2026-10-09T00:00:00.000Z",
   "source": {
-    "kind": "PROJECT_LOCAL",
-    "repository": null,
-    "url": null,
+    "kind": "GITHUB_RAW",
+    "repository": "taurenbeck-stack/crypto-pattern-catalog",
+    "url": "https://raw.githubusercontent.com/taurenbeck-stack/crypto-pattern-catalog/main/patterns.json",
     "license": "Project-local rule definitions; no external rule code or data copied."
   },
   "patterns": [
